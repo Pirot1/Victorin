@@ -1,5 +1,5 @@
 import sqlite3
-from random import randint
+from random import randint,shuffle
 
 db_name = 'quiz.sqlite'
 conn = None

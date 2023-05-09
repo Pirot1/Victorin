@@ -1,5 +1,5 @@
 import os
-from random import shuffle
+from random import randint,shuffle
 from flask import Flask, session, request,redirect , render_template,url_for
 from db_scripts import get_question_after,get_quises, check_answer
 
@@ -35,7 +35,7 @@ def save_answers():
 def question_form(question):
     answers_list = [question[2],question[3],question[4],question[5]]
     shuffle(answers_list)
-    return rednder_temlate('test.html',question = question[1],quest_id = question[0],answers_list = answers_list)
+    return render_template('test.html',question = question[1],quest_id = question[0],answers_list = answers_list)
 
 
 def test():

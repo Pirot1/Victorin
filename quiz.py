@@ -27,7 +27,7 @@ def index():
 
 def save_answers():
     answer = request.form.get('ans_text')
-    quest_id = request.form.get(q_id)
+    quest_id = request.form.get('q_id')
     session['last_question'] = quest_id
     session['total'] += 1
     if check_answer(quest_id,answer):
@@ -51,7 +51,7 @@ def test():
             return question_form(next_question)
         
 def result():
-    html = render_template('result.html', right = session['answers'], total = session('total'))
+    html = render_template('result.html', right = session['answers'], total = session['total'])
     end_quiz()
     return html
 
